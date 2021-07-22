@@ -32,6 +32,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 kcontrol filesharing config module for SMB.
 
+%description -l pl.UTF-8
+Moduł do konfiguracji współdzielenia plików przez SMB.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
