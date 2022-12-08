@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.3
+%define		kdeappsver	22.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdenetwork-filesharing
 Summary:	KDENetwork file sharing
 Name:		ka5-%{kaname}
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	4be0e0247076da671fa97aa2664a1b65
+# Source0-md5:	29bea071ae8ffc0c048147b8fd2a0a95
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -74,3 +74,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.kdenetwork-filesharing.metainfo.xml
 %{_datadir}/polkit-1/actions/org.kde.filesharing.samba.policy
 %{_libdir}/qt5/plugins/kf5/propertiesdialog/sambausershareplugin.so
+%{_libdir}/qt5/plugins/kf5/propertiesdialog/SambaAcl.so
