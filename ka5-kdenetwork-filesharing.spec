@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.1
+%define		kdeappsver	22.12.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdenetwork-filesharing
 Summary:	KDENetwork file sharing
 Name:		ka5-%{kaname}
-Version:	22.12.1
+Version:	22.12.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ed9671586bf7affc0de596f72463c81d
+# Source0-md5:	9da1a62b4fc8a27d6390ce8be525a4f3
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
