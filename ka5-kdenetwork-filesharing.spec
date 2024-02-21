@@ -1,31 +1,31 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.4
+%define		kdeappsver	24.01.95
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kdenetwork-filesharing
 Summary:	KDENetwork file sharing
 Name:		ka5-%{kaname}
-Version:	23.08.4
-Release:	1
+Version:	24.01.95
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	12163a807e27980b6654a4caf3a9a796
+Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	c292773c5d3d4d3604546ab905dc7559
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= 5.11.1
-BuildRequires:	Qt5Widgets-devel
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= 5.11.1
+BuildRequires:	Qt6Widgets-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf5-kdoctools-devel >= %{kframever}
-BuildRequires:	kf5-ki18n-devel >= %{kframever}
-BuildRequires:	kf5-kio-devel >= %{kframever}
-BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf6-kdoctools-devel >= %{kframever}
+BuildRequires:	kf6-ki18n-devel >= %{kframever}
+BuildRequires:	kf6-kio-devel >= %{kframever}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
 BuildRequires:	ninja
-BuildRequires:	qt5-build >= %{qtver}
+BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -66,10 +66,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_prefix}/libexec/kauth/authhelper
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/propertiesdialog/SambaAcl.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/propertiesdialog/sambausershareplugin.so
+%attr(755,root,root) %{_prefix}/libexec/kf6/kauth/authhelper
 %{_datadir}/dbus-1/system-services/org.kde.filesharing.samba.service
 %{_datadir}/dbus-1/system.d/org.kde.filesharing.samba.conf
 %{_datadir}/metainfo/org.kde.kdenetwork-filesharing.metainfo.xml
 %{_datadir}/polkit-1/actions/org.kde.filesharing.samba.policy
-%{_libdir}/qt5/plugins/kf5/propertiesdialog/sambausershareplugin.so
-%{_libdir}/qt5/plugins/kf5/propertiesdialog/SambaAcl.so
